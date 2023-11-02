@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data" class="d-flex flex-column align-items-center justify-content-center gap-3">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <button type="submit" class="btn btn-primary">Sign In</button>
+</form>
+<a href="{% url 'register' %}"><small>Create an account</small></a>
+{% endblock %}
